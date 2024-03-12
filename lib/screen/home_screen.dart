@@ -47,19 +47,25 @@ class _HomeScreenState extends State<HomeScreen> {
                     456,
                     789,
                   ]
+                      .asMap()
+                      .entries
                       .map(
-                        (x) => Row(
-                          children: x
-                              .toString()
-                              .split('')
-                              .map(
-                                (y) => Image.asset(
-                                  'asset/img/$y.png',
-                                  height: 70.0,
-                                  width: 70.0,
-                                ),
-                              )
-                              .toList(),
+                        (x) => Padding(
+                          padding:
+                              EdgeInsets.only(bottom: x.key == 2 ? 0 : 16.0),
+                          child: Row(
+                            children: x.value
+                                .toString()
+                                .split('')
+                                .map(
+                                  (y) => Image.asset(
+                                    'asset/img/$y.png',
+                                    height: 70.0,
+                                    width: 70.0,
+                                  ),
+                                )
+                                .toList(),
+                          ),
                         ),
                       )
                       .toList(),
