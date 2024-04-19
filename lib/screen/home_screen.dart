@@ -91,7 +91,7 @@ class _Header extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
+        const Text(
           '랜덤숫자 생성기',
           style: TextStyle(
             color: Colors.white,
@@ -101,7 +101,7 @@ class _Header extends StatelessWidget {
         ),
         IconButton(
           onPressed: onPressed,
-          icon: Icon(
+          icon: const Icon(
             Icons.settings,
             color: RED_COLOR,
           ),
@@ -156,9 +156,17 @@ class _Footer extends StatelessWidget {
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: RED_COLOR,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(4.0),
+          ),
         ),
         onPressed: onPressed,
-        child: Text('생성하기'),
+        child: const Text(
+          '생성하기',
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
       ),
     );
   }

@@ -105,8 +105,16 @@ class _Footer extends StatelessWidget {
           onPressed: onButtonPressed,
           style: ElevatedButton.styleFrom(
             backgroundColor: RED_COLOR,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(4.0),
+            ),
           ),
-          child: Text('저장'),
+          child: const Text(
+            '저장',
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
         ),
       ],
     );
